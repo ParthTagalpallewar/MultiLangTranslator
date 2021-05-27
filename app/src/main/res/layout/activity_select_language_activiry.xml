@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".ui.translation.languages.SelectLanguageTo">
+
+    <EditText
+        android:id="@+id/select_language_searchView"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@drawable/edit_text_background"
+        android:layout_marginTop="3dp"
+        android:layout_marginLeft="4dp"
+        android:textColorHint="@color/grey_500"
+        android:textColor="@color/grey"
+        android:hint="Search Language Here"
+        android:paddingLeft="10dp"
+        android:layout_marginRight="4dp"
+        />
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/select_language_recyclerView"
+            android:layout_marginLeft="5dp"
+            tools:itemCount="20"
+            tools:listitem="@layout/item_select_language"
+            android:layout_marginTop="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+          />
+
+
+
+</LinearLayout>

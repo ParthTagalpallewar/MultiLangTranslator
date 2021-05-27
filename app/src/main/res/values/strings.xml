@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Translators</string>
+    <string name="title_activity_learing_main">LearingMainActivity</string>
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
+
+    <string name="internetError">java.net.UnknownHostException: Unable to resolve host "api.cognitive.microsofttranslator.com": No address associated with hostname</string>
+</resources>
