@@ -3,6 +3,8 @@ package com.android.translateapplication.ui.splash;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -25,10 +27,14 @@ public class SplashScreen extends AppCompatActivity {
     private int time = 2000;
     SplashViewModel viewModel;
 
+    private ProgressBar progressBar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_screen);
+
+
 
         intiProperties();
 
@@ -38,6 +44,7 @@ public class SplashScreen extends AppCompatActivity {
 
     private void checkDataPresent() {
         viewModel.getAllLanguages().observe(this, list -> {
+            progressBar.setVisibility(View.VISIBLE);
             if (list.size() > 0) {
                 showBasicSplash();
             } else {
@@ -53,6 +60,8 @@ public class SplashScreen extends AppCompatActivity {
         responseCall.enqueue(new Callback<LanguageResponse>() {
             @Override
             public void onResponse(Call<LanguageResponse> call, Response<LanguageResponse> response) {
+
+                progressBar.setVisibility(View.INVISIBLE);
 
                 if (response.isSuccessful() && response.code() == 200) {
 
@@ -70,6 +79,7 @@ public class SplashScreen extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<LanguageResponse> call, Throwable t) {
+                progressBar.setVisibility(View.INVISIBLE);
                 Log.e("error ", t.toString());Log.e("error ", t.toString());
 
                 String internetError = getString(R.string.internetError);
@@ -86,6 +96,8 @@ public class SplashScreen extends AppCompatActivity {
 
     private void intiProperties() {
         viewModel = new ViewModelProvider(this).get(SplashViewModel.class);
+        progressBar = findViewById(R.id.splash_progress_bar);
+        progressBar.setVisibility(View.INVISIBLE);
     }
 
     private void showBasicSplash() {
@@ -109,6 +121,7 @@ public class SplashScreen extends AppCompatActivity {
     }
 
     private void move() {
+        progressBar.setVisibility(View.INVISIBLE);
         Log.e("SplashMoveTrigger", "move: ");
         startActivity(new Intent(getBaseContext(), FeatureSelectionActivity.class));
     }

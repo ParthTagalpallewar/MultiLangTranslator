@@ -8,6 +8,9 @@
     android:weightSum="4"
     tools:context=".ui.FeatureSelectionActivity">
 
+
+
+
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -95,7 +98,18 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="150dp" />
+            android:layout_height="150dp" >
+
+            <ImageView
+                android:id="@+id/otherApps"
+                android:layout_width="50sp"
+                android:layout_height="50dp"
+                android:padding="10dp"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/menu"
+                />
+
+        </RelativeLayout>
 
 
         <RelativeLayout

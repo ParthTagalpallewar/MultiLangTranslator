@@ -14,7 +14,8 @@
         <activity
             android:name=".ui.learingLang.LearingMainActivity"
             android:label="@string/title_activity_learing_main"
-            android:theme="@style/Theme.TranslateApplication.NoActionBar"></activity>
+            android:theme="@style/Theme.TranslateApplication.NoActionBar" />
+        <activity android:name=".ui.learingLang.OtherApps"/>
         <activity android:name=".ui.translation.languages.SelectLanguageTo" />
         <activity android:name=".ui.translation.languagesfrom.SelectLanguageFrom" />
         <activity android:name=".ui.learingLang.languages.nativeLanguage.ChooseNativeLanguage" />
@@ -22,7 +23,9 @@
         <activity android:name=".ui.learingLang.BaseLearingActivity" />
         <activity android:name=".ui.translation.TraslationActivity" />
         <activity android:name=".ui.FeatureSelectionActivity" />
-        <activity android:name=".ui.splash.SplashScreen">
+        <activity android:name=".ui.splash.SplashScreen"
+            android:theme="@style/Theme.TranslateApplication.NoActionBar"
+            >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
